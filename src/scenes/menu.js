@@ -10,12 +10,14 @@ class Menu extends Phaser.Scene {
         this.load.image('o', './assets/art/O.png');
 
         //Loading font
-        this.load.font('winkymilky', './assets/fonts/WinkyMilky.ttf');
+        this.load.bitmapFont('winkymilky', 'winkymilky.png', './assets/fonts/WinkyMilky.fnt');
 
     }
 
     create() { 
     console.log("menu scene");
+
+        this.title = this.add.text(game.config.width/2, 50, 'Tic-Tac-Bid', {fontFamily: 'winkymilky', fontSize: '48px'}).setOrigin(0.5);
         //this.add.image(game.config.width/2, game.config.height/2, 'board');
         this.xsprite = this.add.image(game.config.width/2, game.config.height/2, 'x').setTint(0xFF0000);
         this.osprite = this.add.image(game.config.width/2, game.config.height/2, 'o').setTint(0x0000FF);
