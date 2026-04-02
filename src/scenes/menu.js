@@ -3,21 +3,11 @@ class Menu extends Phaser.Scene {
         super("menuScene");
     }
 
-    preload() {
-    
-        this.load.image('board', './assets/art/board.png');
-        this.load.image('x', './assets/art/X.png');
-        this.load.image('o', './assets/art/O.png');
-
-        //Loading font
-        this.load.bitmapFont('winkymilky', 'winkymilky.png', './assets/fonts/WinkyMilky.fnt');
-
-    }
-
     create() { 
     console.log("menu scene");
 
-        this.title = this.add.text(game.config.width/2, 50, 'Tic-Tac-Bid', {fontFamily: 'winkymilky', fontSize: '48px'}).setOrigin(0.5);
+        this.title = this.add.bitmapText(game.config.width/2, 50, 'winkymilky', 'Tic-Tac-Bid', 48).setOrigin(0.5).setTint(0x00000);
+
         //this.add.image(game.config.width/2, game.config.height/2, 'board');
         this.xsprite = this.add.image(game.config.width/2, game.config.height/2, 'x').setTint(0xFF0000);
         this.osprite = this.add.image(game.config.width/2, game.config.height/2, 'o').setTint(0x0000FF);
@@ -36,6 +26,5 @@ class Menu extends Phaser.Scene {
             });
         }
 
-        this.add.rectangle(500, 500, 100, 50, 0x00FF00);
     }
 }
