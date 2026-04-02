@@ -33,5 +33,7 @@ class Menu extends Phaser.Scene {
                 this.osprite.setTint(colors[i]);
             });
         }
+
+        this.add.rectangle(500, 500, 100, 50, 0x00FF00);
     }
 }
