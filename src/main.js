@@ -5,8 +5,8 @@ let config = {
 	type: Phaser.WEBGL,
 	width: 800,
 	height: 600,
-	scene: []
+	backgroundColor: '#FACADE',
+	scene: [ Menu ]
 };
 
 const game = new Phaser.Game(config);
-
