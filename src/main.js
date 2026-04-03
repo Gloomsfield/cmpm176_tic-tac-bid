@@ -6,6 +6,7 @@ let config = {
 	width: 800,
 	height: 600,
 	backgroundColor: '#FACADE',
+	pixelArt: true,
 	scene: [ Load, Menu ]
 };
 

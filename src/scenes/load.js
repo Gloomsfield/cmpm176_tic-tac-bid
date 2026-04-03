@@ -9,6 +9,10 @@ class Load extends Phaser.Scene {
         this.load.image('board', './assets/art/board.png'); //Board image
         this.load.image('x', './assets/art/X.png'); // X image
         this.load.image('o', './assets/art/O.png'); // O image
+        this.load.image('bidBlue', './assets/art/bidBlue.png');
+        this.load.image('bidPurple', './assets/art/bidPurple.png');
+        this.load.image('bidOrange', './assets/art/bidOrange.png');
+        this.load.image('bidRed', './assets/art/bidRed.png');
 
         //Button
         this.load.spritesheet('button', '/assets/art/button.png', {frameWidth: 110, frameHeight: 60});
