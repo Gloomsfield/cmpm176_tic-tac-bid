@@ -3,8 +3,9 @@ class Game extends Phaser.Scene {
 		super("game_scene");
 	}
 
-	create() {
-		
+	create(player_bids) {
+		this.player_bids = player_bids;
+		console.log(this.player_bids);
 	}
 }
 
