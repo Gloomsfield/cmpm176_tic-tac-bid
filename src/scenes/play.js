@@ -25,20 +25,25 @@ class Play extends Phaser.Scene {
 
 		this.scene.get("bidding_scene").events.on("place_bid", () => {
 			if(this.tile_index >= 8) {
+				this.tile_index = 0;
+
 				if(this.player_index > 0) {
-					this.scene.get("bidding_scene").stop();
+					this.scene.stop("bidding_scene");
 
 					this.scene.launch("game_scene");
 
 					return;
 				}
 				
+				this.scene.get("bidding_scene").bidstart_text.text = "Player 2, place your bids!";
+				this.scene.get("bidding_scene").tileindex_text.text = `Bid for tile ${this.tile_index + 1}:`;
 				this.player_index++;
 
 				return;
 			}
 
-			this.tile_index++;
+			this.scene.get("bidding_scene").bid_text.text = 0;
+			this.scene.get("bidding_scene").tileindex_text.text = `Bid for tile ${++this.tile_index + 1}:`;
 		}, this);
 	}
 
@@ -49,7 +54,7 @@ class Play extends Phaser.Scene {
 	}
 
 	decrement_bid(player_index, tile_index) {
-		if(this.player_bids[this.player_index] > 0) {
+		if(this.player_bids[this.player_index][this.tile_index] > 0) {
 			this.scene.get("bidding_scene").bid_text.text = --this.player_bids[this.player_index][this.tile_index];
 		}
 	}
