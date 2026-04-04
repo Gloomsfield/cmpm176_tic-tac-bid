@@ -48,9 +48,9 @@ class Menu extends Phaser.Scene {
             this.startButton.setFrame(0);
         });
         //======================================== Start play scene ========================================
-        /*this.startButton.on('pointerdown', () => {
-            this.scene.start('playScene');
-        });*/
+        this.startButton.on('pointerdown', () => {
+            this.scene.start('play_scene');
+        });
 
         // Rules button
         this.ruleButton = this.add.sprite(game.config.width / 3, game.config.height / 1.5, 'button').setInteractive().setTint(0xff6000).setScale(1.5);

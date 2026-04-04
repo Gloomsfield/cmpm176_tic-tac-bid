@@ -7,7 +7,7 @@ let config = {
 	height: 600,
 	backgroundColor: '#FACADE',
 	pixelArt: true,
-	scene: [ Load, Menu ]
+	scene: [ Load, Menu, Play, Bidding ]
 };
 
 const game = new Phaser.Game(config);
