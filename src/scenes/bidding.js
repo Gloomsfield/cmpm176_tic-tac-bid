@@ -28,9 +28,17 @@ class Bidding extends Phaser.Scene {
 			32
 		);
 
-		this.raise_bid_button = this.add.sprite(
+		this.lower_bid_button = this.add.sprite(
 			100.0,
 			200.0,
+			"button"
+		).setInteractive().on("pointerdown", () => {
+			this.events.emit("decrease_bid");
+		});
+
+		this.raise_bid_button = this.add.sprite(
+			100.0,
+			250.0,
 			"button"
 		).setInteractive().on("pointerdown", () => {
 			this.events.emit("increase_bid");
@@ -38,7 +46,7 @@ class Bidding extends Phaser.Scene {
 
 		this.place_bid_button = this.add.sprite(
 			100.0,
-			250.0,
+			300.0,
 			"button"
 		).setInteractive().on("pointerdown", () => {
 			this.events.emit("place_bid");
