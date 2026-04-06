@@ -10,8 +10,6 @@ class Game extends Phaser.Scene {
 	}
 
 	determine_winner() {
-		console.log(this.player_bids);
-
 		let board_state = [
 			-1, -1, -1,
 			-1, -1, -1,
@@ -27,8 +25,6 @@ class Game extends Phaser.Scene {
 
 			board_state[i] = +(this.player_bids[1][i] > this.player_bids[0][i]);
 		}
-
-		console.log(board_state);
 
 		for(let i = 0; i < 3; i++) {
 			let row_winner = -1;
@@ -57,8 +53,6 @@ class Game extends Phaser.Scene {
 		let winner = -1;
 
 		if(win_counts[0] != win_counts[1]) { winner = (win_counts[0] < win_counts[1]); }
-
-		console.log(`winner: ${winner}`);
 	}
 }
 
