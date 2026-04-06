@@ -40,6 +40,7 @@ class Play extends Phaser.Scene {
 				this.bidding_scene.update_bidstart_text(1);
 				this.bidding_scene.update_tileindex_text(0);
 				this.bidding_scene.update_bid_text(0);
+				this.bidding_scene.update_points_text(15);
 				this.player_index++;
 
 				return;
