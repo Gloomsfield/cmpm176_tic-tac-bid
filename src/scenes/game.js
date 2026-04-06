@@ -26,6 +26,7 @@ class Game extends Phaser.Scene {
 			board_state[i] = +(this.player_bids[1][i] > this.player_bids[0][i]);
 		}
 
+		// determine which player has won each row/column
 		for(let i = 0; i < 3; i++) {
 			let row_winner = -1;
 			let column_winner = -1;
@@ -47,6 +48,7 @@ class Game extends Phaser.Scene {
 			}
 		}
 
+		// determine which player has won each diagonal
 		if(board_state[0] == board_state[4] && board_state[0] == board_state[8]) { win_counts[board_state[0]]++; }
 		if(board_state[2] == board_state[4] && board_state[0] == board_state[6]) { win_counts[board_state[2]]++; }
 
