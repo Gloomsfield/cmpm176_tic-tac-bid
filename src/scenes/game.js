@@ -6,17 +6,19 @@ class Game extends Phaser.Scene {
 	create(player_bids) {
 		this.player_bids = player_bids;
 
-		this.determine_winner();
+		this.board_state = this.collapse_state();
+
+		this.winner = this.determine_winner(this.board_state);
+
+		this.scene.launch("board_scene", { state: this.board_state, winner: this.winner });
 	}
 
-	determine_winner() {
+	collapse_state() {
 		let board_state = [
 			-1, -1, -1,
 			-1, -1, -1,
 			-1, -1, -1,
 		];
-
-		let win_counts = [ 0, 0 ];
 
 		for(let i = 0; i < 9; i++) {
 			if(this.player_bids[0][i] == this.player_bids[1][i]) {
@@ -25,6 +27,12 @@ class Game extends Phaser.Scene {
 
 			board_state[i] = +(this.player_bids[1][i] > this.player_bids[0][i]);
 		}
+
+		return board_state;
+	}
+
+	determine_winner(board_state) {
+		let win_counts = [ 0, 0 ];
 
 		// determine which player has won each row/column
 		for(let i = 0; i < 3; i++) {
@@ -55,6 +63,8 @@ class Game extends Phaser.Scene {
 		let winner = -1;
 
 		if(win_counts[0] != win_counts[1]) { winner = (win_counts[0] < win_counts[1]); }
+
+		return (+winner);
 	}
 }
 
