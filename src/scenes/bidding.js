@@ -30,7 +30,7 @@ class Bidding extends Phaser.Scene {
 
 		this.raise_bid_button = this.add.sprite(
 			100.0,
-			200.0,
+			225.0,
 			"button"
 		).setInteractive().on("pointerdown", () => {
 			this.events.emit("increase_bid");
@@ -38,7 +38,7 @@ class Bidding extends Phaser.Scene {
 
 		this.raise_bid_text = this.add.bitmapText(
 			100.0,
-			200.0,
+			225.0,
 			"winkymilky",
 			"Raise",
 			24
@@ -46,7 +46,7 @@ class Bidding extends Phaser.Scene {
 
 		this.lower_bid_button = this.add.sprite(
 			100.0,
-			250.0,
+			300.0,
 			"button"
 		).setInteractive().on("pointerdown", () => {
 			this.events.emit("decrease_bid");
@@ -54,7 +54,7 @@ class Bidding extends Phaser.Scene {
 
 		this.lower_bid_text = this.add.bitmapText(
 			100.0,
-			250.0,
+			300.0,
 			"winkymilky",
 			"Lower",
 			24
@@ -62,7 +62,7 @@ class Bidding extends Phaser.Scene {
 
 		this.place_bid_button = this.add.sprite(
 			100.0,
-			300.0,
+			375.0,
 			"button"
 		).setInteractive().on("pointerdown", () => {
 			this.events.emit("place_bid");
@@ -70,7 +70,7 @@ class Bidding extends Phaser.Scene {
 
 		this.place_bid_text = this.add.bitmapText(
 			100.0,
-			300.0,
+			375.0,
 			"winkymilky",
 			"Bid",
 			24

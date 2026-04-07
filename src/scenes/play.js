@@ -37,6 +37,16 @@ class Play extends Phaser.Scene {
 					return;
 				}
 				
+				this.bidding_scene.raise_bid_button.setX(game.config.width - 100.0);
+				this.bidding_scene.raise_bid_text.setX(game.config.width - 100.0);
+				this.bidding_scene.lower_bid_button.setX(game.config.width - 100.0);
+				this.bidding_scene.lower_bid_text.setX(game.config.width - 100.0);
+				this.bidding_scene.place_bid_button.setX(game.config.width - 100.0);
+				this.bidding_scene.place_bid_text.setX(game.config.width - 100.0);
+
+				this.bidding_scene.tileindex_text.setX(game.config.width - 100.0);
+				this.bidding_scene.bid_text.setX(game.config.width - 100.0);
+
 				this.bidding_scene.update_bidstart_text(1);
 				this.bidding_scene.update_tileindex_text(0);
 				this.bidding_scene.update_bid_text(0);
