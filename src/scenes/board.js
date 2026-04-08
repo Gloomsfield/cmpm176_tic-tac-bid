@@ -4,6 +4,10 @@ class Board extends Phaser.Scene {
 	}
 
 	create(data) {
+		this.board = this.add.sprite(
+			game.config.width / 2.0, game.config.height / 2.0, 'board'
+		).setOrigin(0.5, 0.5);
+
 		for(let i = 0; i < 9; i++) {
 			this.time.delayedCall(350 * (i + 1), this.claim_tile, [ i, data.state[i] ], this);
 		}
@@ -15,8 +19,8 @@ class Board extends Phaser.Scene {
 		let tile_size = 100.0;
 
 		return new Phaser.Math.Vector2(
-			tile_size * (tile_index % 3),
-			tile_size * Math.floor(tile_index / 3)
+			1.25 * (tile_size * (tile_index % 3)) + game.config.width / 2.0 - 125.0,
+			1.25 * (tile_size * Math.floor(tile_index / 3)) + game.config.height / 2.0 - 125.0
 		);
 	}
 
@@ -42,7 +46,7 @@ class Board extends Phaser.Scene {
 		}
 
 		this.add.bitmapText(
-			game.config.width / 2.0, game.config.height / 2.0, "winkymilky", win_text, 72
+			game.config.width / 2.0, game.config.height - 50.0, "winkymilky", win_text, 72
 		).setOrigin(0.5, 0.5);
 	}
 }
