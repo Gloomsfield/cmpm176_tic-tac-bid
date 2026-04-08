@@ -6,7 +6,13 @@ let config = {
 	width: 800,
 	height: 600,
 	backgroundColor: '#FACADE',
-	pixelArt: true,
+	render: {
+        pixelArt: true
+    },
+	scale: {
+        mode: Phaser.Scale.NONE,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
 	scene: [ Load, Menu, Play, Bidding, Game, Board ]
 };
 
