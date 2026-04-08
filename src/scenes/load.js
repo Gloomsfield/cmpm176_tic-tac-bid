@@ -15,7 +15,7 @@ class Load extends Phaser.Scene {
         this.load.image('bidRed', './assets/art/bidRed.png');
 
         //Button
-        this.load.spritesheet('button', '/assets/art/button.png', {frameWidth: 110, frameHeight: 60});
+        this.load.spritesheet('button', './assets/art/button.png', {frameWidth: 110, frameHeight: 60});
 
         //Loading font
         this.load.bitmapFont('winkymilky', './assets/fonts/winkymilky.png', './assets/fonts/winkymilky.xml');
