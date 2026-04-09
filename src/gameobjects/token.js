@@ -12,7 +12,7 @@ class Token extends Phaser.GameObjects.Sprite {
 		let color = xColor;
 		if(state == 2) { color = oColor; }
 
-		this.setTint();
+		this.setTint(color);
 
 		scene.add.existing(this);
 	}
