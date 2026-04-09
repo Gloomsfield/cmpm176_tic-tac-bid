@@ -2,6 +2,7 @@
 // by amory acosta and nick marigo
 
 let config = {
+	parent: "game-container",
 	type: Phaser.WEBGL,
 	width: 800,
 	height: 600,
